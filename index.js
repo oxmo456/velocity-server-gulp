@@ -14,7 +14,7 @@ module.exports = new function () {
         console.log(templatesDirectory);
         console.log(fixturesDirectory);
 
-        exec('java -jar velocity-server.jar ' + staticDirectory + ' ' + templatesDirectory + ' ' + fixturesDirectory, function (err, stdout, stderr) {
+        exec('java -jar ' + __dirname + '/velocity-server.jar ' + staticDirectory + ' ' + templatesDirectory + ' ' + fixturesDirectory, function (err, stdout, stderr) {
 
             stdout.on('data', function (data) {
                 console.log('> ' + data);
